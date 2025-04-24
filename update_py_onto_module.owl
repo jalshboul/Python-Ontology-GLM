@@ -1,0 +1,745 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://test.org/Domain_Specific_Concepts.owl"
+         xmlns="http://test.org/Domain_Specific_Concepts.owl#">
+
+<owl:Ontology rdf:about="http://test.org/Domain_Specific_Concepts.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasPart">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#partOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#partOf">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasPart"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDependency">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#dependencyOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#dependencyOf">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasDependency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associate">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#associatedBy"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#associatedBy">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#associate"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasParent">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#parentOF"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#parentOF">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasParent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasProperty">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#DomainProperties"/>
+  <owl:inverseOf rdf:resource="#propertyOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#propertyOf">
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTask">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#TaskAssessments"/>
+  <owl:inverseOf rdf:resource="#taskOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#taskOf">
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasTask"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasMaterial">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#MaterialResources"/>
+  <owl:inverseOf rdf:resource="#materialOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#materialOf">
+  <rdfs:domain rdf:resource="#MaterialResources"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasMaterial"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDRule">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#LearningRules"/>
+  <owl:inverseOf rdf:resource="#druleUOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#druleUOf">
+  <rdfs:domain rdf:resource="#LearningRules"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasDRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPRule">
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="#LearningRules"/>
+  <owl:inverseOf rdf:resource="#pruleOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pruleOf">
+  <rdfs:domain rdf:resource="#LearningRules"/>
+  <rdfs:range rdf:resource="#DomainProperties"/>
+  <owl:inverseOf rdf:resource="#hasPRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLLevel">
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="#LearningLevels"/>
+  <owl:inverseOf rdf:resource="#lLevelOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#lLevelOf">
+  <rdfs:domain rdf:resource="#LearningLevels"/>
+  <rdfs:range rdf:resource="#DomainConcepts"/>
+  <owl:inverseOf rdf:resource="#hasLLevel"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#domainID">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#domainName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#parentDomain">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#domainDescription">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainConcepts"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#propertyID">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#propertyName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#parentProperty">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#propertyType">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#propertyRole">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#propertyDescription">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#DomainProperties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#materialID">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#MaterialResources"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#materialName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#MaterialResources"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#materialType">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#MaterialResources"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#materialReference">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#MaterialResources"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#taskID">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#taskName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#taskCatogary">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#questionSchema">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#a">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#b">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#c">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#d">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#answerSchema">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#taskLanguage">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#taskScore">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TaskAssessments"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ruleID">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningRules"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ruleValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningRules"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ruleSyntax">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningRules"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#ruleDescription">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningRules"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#levelID">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningLevels"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#levelValue">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningLevels"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#levelName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningLevels"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#levelDescription">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#LearningLevels"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#DomainConcepts">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasParent"/>
+      <owl:someValuesFrom rdf:resource="#DomainConcepts"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#DomainConcepts"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasPart"/>
+          <owl:someValuesFrom rdf:resource="#DomainConcepts"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasDependency"/>
+          <owl:someValuesFrom rdf:resource="#DomainConcepts"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#associate"/>
+          <owl:someValuesFrom rdf:resource="#DomainConcepts"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasParent"/>
+          <owl:someValuesFrom rdf:resource="#DomainConcepts"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasTask"/>
+          <owl:someValuesFrom rdf:resource="#TaskAssessments"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasProperty"/>
+          <owl:someValuesFrom rdf:resource="#DomainProperties"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasDRule"/>
+          <owl:someValuesFrom rdf:resource="#LearningRules"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasMaterial"/>
+          <owl:someValuesFrom rdf:resource="#MaterialResources"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasLLevel"/>
+          <owl:someValuesFrom rdf:resource="#LearningLevels"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#associate"/>
+          <owl:someValuesFrom rdf:resource="#DomainConcepts"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#LearningObjectives">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DomainProperties">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#DomainProperties"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasDRule"/>
+          <owl:someValuesFrom rdf:resource="#LearningRules"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#TaskAssessments">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LearningRules">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MaterialResources">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TextBookResources">
+  <rdfs:subClassOf rdf:resource="#MaterialResources"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WebResources">
+  <rdfs:subClassOf rdf:resource="#MaterialResources"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LearningLevels">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Python_Programming">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <hasMaterial rdf:resource="#m_resource1"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Programming</domainName>
+  <parentDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Programming Language</parentDomain>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python is used for server-side web development, software development, mathematics, and system 
+    scripting, and is popular for Rapid Application Development and as a scripting or glue language to tie existing components
+    because of its high-level, built-in data structures, dynamic typing, and dynamic binding.</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Python_Class">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <hasProperty rdf:resource="#syntax"/>
+  <hasDependency rdf:resource="#Relational_Operator"/>
+  <hasDependency rdf:resource="#Logical_Operator"/>
+  <hasParent rdf:resource="#Python_Programming"/>
+  <hasTask rdf:resource="#task5"/>
+  <hasTask rdf:resource="#task1"/>
+  <hasTask rdf:resource="#task3"/>
+  <hasTask rdf:resource="#task2"/>
+  <hasTask rdf:resource="#task7"/>
+  <hasTask rdf:resource="#task6"/>
+  <hasTask rdf:resource="#task4"/>
+  <hasMaterial rdf:resource="#m_resource2"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Class</domainName>
+  <parentDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Programming</parentDomain>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A class is a user-defined blueprint or prototype from which objects are created. Classes provide 
+    a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new 
+    instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. 
+    Class instances can also have methods (defined by their class) for modifying their state.</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Relational_Operator">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relational Operator</domainName>
+  <parentDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Programming</parentDomain>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In Python, relational operators are used to compare two values or expressions and determine the 
+    relationship between them. These operators return a Boolean value (True or False) based on the comparison result.</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Logical_Operator">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Logical Operator</domainName>
+  <parentDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Programming</parentDomain>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In Python, logical operators are used to combine multiple conditions or expressions and evaluate 
+    them as a single Boolean result. These operators allow you to create complex conditions by combining simpler conditions.</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Python_Function">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <hasMaterial rdf:resource="#m_resource3"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Function</domainName>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In Python, a function is a block of reusable code that performs a specific task. Functions allow 
+    you to organize your code into modular and reusable components, making it easier to manage, debug, and maintain your codebase</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Python_Variable">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Variable</domainName>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In Python, a variable is a named reference to a value stored in the computer's memory. Variables 
+    are used to store data that can be manipulated and accessed throughout the program.</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Python_DataTypes">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Data Types</domainName>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In Python, data types are classifications of data that determine the possible values and operations
+    that can be performed on them. Python is a dynamically typed language, which means that variables can hold values of 
+    different types, and the type of a variable is determined by the value it holds.</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Python_Control_Structures">
+  <rdf:type rdf:resource="#DomainConcepts"/>
+  <domainID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</domainID>
+  <domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Control Structures</domainName>
+  <domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In Python, control structures are used to control the flow of execution in a program. They allow 
+    you to make decisions, repeat actions, and define the order in which statements are executed.</domainDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#syntax">
+  <rdf:type rdf:resource="#DomainProperties"/>
+  <propertyID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</propertyID>
+  <propertyName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syntax</propertyName>
+  <parentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></parentProperty>
+  <propertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Property</propertyType>
+  <propertyRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obligatory</propertyRole>
+  <propertyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syntax of the class in Python programming.</propertyDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#variable_name">
+  <rdf:type rdf:resource="#DomainProperties"/>
+  <propertyID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</propertyID>
+  <propertyName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variable name</propertyName>
+  <parentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></parentProperty>
+  <propertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Property</propertyType>
+  <propertyRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obligatory</propertyRole>
+  <propertyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">variable name of the loop in c++ programming.</propertyDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#data_type">
+  <rdf:type rdf:resource="#DomainProperties"/>
+  <propertyID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</propertyID>
+  <propertyName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data type</propertyName>
+  <parentProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></parentProperty>
+  <propertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Property</propertyType>
+  <propertyRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obligatory</propertyRole>
+  <propertyDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data type of variable for the loop in c++ programming.</propertyDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#task1">
+  <rdf:type rdf:resource="#TaskAssessments"/>
+  <taskID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python_classes</taskID>
+  <taskName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python classes</taskName>
+  <taskCatogary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</taskCatogary>
+  <questionSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is a class in Python?</questionSchema>
+  <a rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A module</a>
+  <b rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A function</b>
+  <c rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A template for creating objects</c>
+  <d rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An array</d>
+  <answerSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</answerSchema>
+  <taskLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</taskLanguage>
+  <taskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</taskScore>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#task2">
+  <rdf:type rdf:resource="#TaskAssessments"/>
+  <taskID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python_classes</taskID>
+  <taskName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python classes</taskName>
+  <taskCatogary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</taskCatogary>
+  <questionSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How do you define a class in Python?</questionSchema>
+  <a rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the keyword "define"</a>
+  <b rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the keyword "class"</b>
+  <c rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the keyword "create"</c>
+  <d rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the keyword "new"</d>
+  <answerSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">b"</answerSchema>
+  <taskLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</taskLanguage>
+  <taskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</taskScore>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#task3">
+  <rdf:type rdf:resource="#TaskAssessments"/>
+  <taskID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python_classes</taskID>
+  <taskName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python classes</taskName>
+  <taskCatogary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</taskCatogary>
+  <questionSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is the purpose of the init() method in a Python class?</questionSchema>
+  <a rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To initialize the class attributes</a>
+  <b rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To define class methods</b>
+  <c rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To create new instances of the class</c>
+  <d rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To delete the class object"</d>
+  <answerSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a</answerSchema>
+  <taskLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</taskLanguage>
+  <taskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</taskScore>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#task4">
+  <rdf:type rdf:resource="#TaskAssessments"/>
+  <taskID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python_classes</taskID>
+  <taskName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python classes</taskName>
+  <taskCatogary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</taskCatogary>
+  <questionSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How do you create an instance of a class in Python?</questionSchema>
+  <a rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the keyword "instance"</a>
+  <b rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the keyword "create"</b>
+  <c rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the class name followed by parentheses</c>
+  <d rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Using the keyword "new"</d>
+  <answerSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</answerSchema>
+  <taskLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</taskLanguage>
+  <taskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</taskScore>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#task5">
+  <rdf:type rdf:resource="#TaskAssessments"/>
+  <taskID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python_classes</taskID>
+  <taskName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python classes</taskName>
+  <taskCatogary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</taskCatogary>
+  <questionSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is inheritance in Python classes?</questionSchema>
+  <a rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process of creating multiple instances of a class</a>
+  <b rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process of passing attributes and methods from one class to another</b>
+  <c rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process of deleting a class object</c>
+  <d rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process of defining new methods in a class</d>
+  <answerSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">b</answerSchema>
+  <taskLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</taskLanguage>
+  <taskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</taskScore>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#task6">
+  <rdf:type rdf:resource="#TaskAssessments"/>
+  <taskID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python_classes</taskID>
+  <taskName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python classes</taskName>
+  <taskCatogary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Program</taskCatogary>
+  <questionSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is the output of the following Python code?
+                        class MyClass:
+                            def __init__(self, value):
+                                self.value = value
+                        obj = MyClass(10)
+                        print(obj.value)
+                        </questionSchema>
+  <a rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</a>
+  <b rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</b>
+  <c rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Error</c>
+  <d rdf:datatype="http://www.w3.org/2001/XMLSchema#string">None</d>
+  <answerSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">b</answerSchema>
+  <taskLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</taskLanguage>
+  <taskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</taskScore>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#task7">
+  <rdf:type rdf:resource="#TaskAssessments"/>
+  <taskID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python_classes</taskID>
+  <taskName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python classes</taskName>
+  <taskCatogary rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Program</taskCatogary>
+  <questionSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What does the following Python code snippet do?
+                        class Person:
+                            def __init__(self, name):
+                                self.name = name
+                            def display_name(self):
+                                print("Name:", self.name)
+                        p1 = Person("Alice")
+                        p1.display_name()
+                    </questionSchema>
+  <a rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Defines a class Person with a display_name method</a>
+  <b rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Creates an instance of the Person class with name "Alice"</b>
+  <c rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prints "Name: Alice"</c>
+  <d rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All of the above</d>
+  <answerSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d</answerSchema>
+  <taskLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</taskLanguage>
+  <taskScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</taskScore>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#beginner_level">
+  <rdf:type rdf:resource="#LearningLevels"/>
+  <levelID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</levelID>
+  <levelValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beginner level</levelValue>
+  <levelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beginner programming</levelName>
+  <levelDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beginner level in Python programming language</levelDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#intermediate_level">
+  <rdf:type rdf:resource="#LearningLevels"/>
+  <levelID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</levelID>
+  <levelValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intermediate level</levelValue>
+  <levelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basics programming</levelName>
+  <levelDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intermediate level in Python programming language</levelDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#upper_intermediate_level">
+  <rdf:type rdf:resource="#LearningLevels"/>
+  <levelID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</levelID>
+  <levelValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upper intermediate level</levelValue>
+  <levelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">advanced programming</levelName>
+  <levelDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upper intermediate level in Python programming language</levelDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#advanced_level">
+  <rdf:type rdf:resource="#LearningLevels"/>
+  <levelID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</levelID>
+  <levelValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">advanced level</levelValue>
+  <levelName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">professional programming</levelName>
+  <levelDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">advanced level in Python programming language</levelDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#m_resource1">
+  <rdf:type rdf:resource="#MaterialResources"/>
+  <materialID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</materialID>
+  <materialName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Basics: A Practical Introduction to Python 3</materialName>
+  <materialType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PDF TextBook Resources</materialType>
+  <materialReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://download.library.lol/main/2945000/4efa9a991b645f75be61871447c559ca/David%20Amos%2C%20Dan%20Bader%2C%20Joanna%20Jablonski%2C%20Fletcher%20Heisler%20-%20Python%20Basics_%20A%20Practical%20Introduction%20to%20Python%203-Real%20Python%20%28realpython.com%29%20%282021%29.pdf</materialReference>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#m_resource2">
+  <rdf:type rdf:resource="#MaterialResources"/>
+  <materialID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</materialID>
+  <materialName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Classes and Objects</materialName>
+  <materialType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Web Resources</materialType>
+  <materialReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.geeksforgeeks.org/python-classes-and-objects/</materialReference>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#m_resource3">
+  <rdf:type rdf:resource="#MaterialResources"/>
+  <materialID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</materialID>
+  <materialName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Python Functions</materialName>
+  <materialType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Web Resources</materialType>
+  <materialReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.geeksforgeeks.org/python-functions/?ref=outind</materialReference>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rule1">
+  <rdf:type rdf:resource="#LearningRules"/>
+  <ruleID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ruleID>
+  <ruleValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Detect the level of the Domain Concepts</ruleValue>
+  <ruleSyntax rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></ruleSyntax>
+  <ruleDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this rule for defining the level of the Domain Concepts</ruleDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rule2">
+  <rdf:type rdf:resource="#LearningRules"/>
+  <ruleID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ruleID>
+  <ruleValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Detect the task for the Domain Concepts</ruleValue>
+  <ruleSyntax rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></ruleSyntax>
+  <ruleDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this rule for defining the task for the Domain Concepts</ruleDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#rule3">
+  <rdf:type rdf:resource="#LearningRules"/>
+  <ruleID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ruleID>
+  <ruleValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detect the task score for the Domain Concepts</ruleValue>
+  <ruleSyntax rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></ruleSyntax>
+  <ruleDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this rule for defining which Domain Concepts has the score </ruleDescription>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
