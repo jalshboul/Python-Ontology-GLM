@@ -1,1 +1,1 @@
-# Sample of Ontology Generation and Ontology Data Set
+Sample of Ontology Generation and Ontology Data Set
